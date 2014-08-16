@@ -231,6 +231,11 @@ a {
   text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
 }
 
+a.user-mention {
+  color: #307afd;
+  text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+}
+
 /* Clearfix */
 
 .cf:before, .cf:after {
@@ -244,4 +249,25 @@ a {
 
 .cf {
   zoom:1;
+}
+
+.box {
+  border:.1em #b5e853 solid;
+  width:90%;
+  margin:1em auto;
+  padding:.5em;
+}
+
+.box > ul {
+  text-align:center;
+  list-style-type:none;
+  margin:0 auto;
+  padding:0;
+}
+
+.box > ul > li {
+  display:inline-block;
+  list-style:none;
+  vertical-align:middle;
+  width:49%;
 }
