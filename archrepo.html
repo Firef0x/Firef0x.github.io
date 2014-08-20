@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+		<title>Firef0x's Arch Linux Repository</title>
+	</head>
+
+	<body>
+
+		<header>
+			<div class="container">
+				<h1><a href="index.html">PanList</a> ArchRepo</h1>
+				<h2>
+					Firef0x's Arch Linux Repository<br/>Firef0x 的 Arch Linux 安装包仓库
+				</h2>
+
+				<section id="downloads">
+					<a href="https://github.com/Firef0x/Firef0x.github.io/tree/master/archrepo" class="btn btn-github">
+						<span class="icon"></span>View on GitHub 在 GitHub 中查看
+					</a>
+				</section>
+			</div>
+		</header>
+
+		<div class="container">
+			<section id="main_content">
+				<h3>
+					<a name="welcome-to-firef0x-repo" class="anchor" href="#welcome-to-firef0x-repo"><span class="octicon octicon-link"></span></a>
+					Welcome to Firef0x's Arch Linux Repository<br/>欢迎来到 Firef0x 的 Arch Linux 安装包仓库
+				</h3>
+
+				<p>The project contains only Arch Linux packages for convenience.</p>
+				<p>这个项目只包含 Arch Linux 的安装包，以方便各位朋友使用。</p>
+
+				<p>Short URL of this page is <a href="http://git.io/-1">http://git.io/-1</a></p>
+				<p>本页面的短网址为 <a href="http://git.io/-1">http://git.io/-1</a></p>
+
+				<h3>
+					<a name="guide-for-adding" class="anchor" href="#guide-for-adding"><span class="octicon octicon-link"></span></a>
+					Guide for Adding This Repo<br/>添加本仓库指引
+				</h3>
+
+				<p>Add the repo to /etc/pacman.conf under the current official Arch Linux repos:</p>
+
+				<p>在 /etc/pacman.conf 文件中现有的 Arch Linux 官方仓库下添加仓库信息：</p>
+
+<pre><code>[firef0x]
+Server = http://firef0x.github.io/archrepo/$arch
+SigLevel = Never
+</code></pre>
+
+				<p>Then, update your sync database and install the package:</p>
+
+				<p>然后，更新您的远程同步数据库并安装包：</p>
+
+<pre><code>$ sudo pacman -Syy
+$ sudo pacman -S [packages]
+</code></pre>
+
+				<h3>
+					<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Author and License<br/>作者与协议
+				</h3>
+
+				<p>All packages is compiled by <a href="https://github.com/Firef0x" class="user-mention">@Firef0x</a>. </p>
+
+				<p>所有安装包由 <a href="https://github.com/Firef0x" class="user-mention">@Firef0x</a> 编译。 </p>
+
+				<p>BCloud Packages is released under <a mcolored="true" href="http://www.gnu.org/licenses/gpl.html">GNU GENERAL PUBLIC LICENSE Version 3</a>. </p>
+
+				<p>BCloud 的安装包以 <a mcolored="true" href="http://www.gnu.org/licenses/gpl.html">GNU 通用公共许可证第三版</a> 发布。 </p>
+
+			</section>
+		</div>
+
+	</body>
+</html>
