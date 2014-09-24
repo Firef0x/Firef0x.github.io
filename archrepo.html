@@ -25,6 +25,12 @@
 						<span class="icon"></span>View on GitHub 在 GitHub 中查看
 					</a>
 				</section>
+
+				<section id="downloads">
+					<a href="http://download.opensuse.org/repositories/home:/firef0x/Arch_Extra/" class="btn btn-opensuse">
+						<span class="icon"></span>View on OpenSUSE 在 OpenSUSE 中查看
+					</a>
+				</section>
 			</div>
 		</header>
 
@@ -41,6 +47,9 @@
 				<p>Short URL of this page is <a href="http://git.io/-1">http://git.io/-1</a></p>
 				<p>本页面的短网址为 <a href="http://git.io/-1">http://git.io/-1</a></p>
 
+				<p>Short URL of OpenSUSE Build Service page is <a href="http://git.io/-0">http://git.io/-0</a></p>
+				<p>OpenSUSE 构建服务页面的短网址为 <a href="http://git.io/-0">http://git.io/-0</a></p>
+
 				<h3>
 					<a name="guide-for-adding" class="anchor" href="#guide-for-adding"><span class="octicon octicon-link"></span></a>
 					Guide for Adding This Repo<br/>添加本仓库指引
@@ -52,6 +61,13 @@
 
 <pre><code>[firef0x]
 Server = http://firef0x.github.io/archrepo/$arch
+SigLevel = Never
+</code></pre>
+
+<pre><code>[home_firef0x_Arch_Extra]
+Server = http://download.opensuse.org/repositories/home:/firef0x/Arch_Extra/$arch
+# 中文用户镜像源
+# Server = ftp://ftp.twaren.net/Linux/OpenSuSE/repositories/home:/firef0x/Arch_Extra/$arch
 SigLevel = Never
 </code></pre>
 
