@@ -4,6 +4,8 @@
 		<meta charset='utf-8'>
 		<meta http-equiv="X-UA-Compatible" content="chrome=1">
 
+		<link href="https://assets-cdn.github.com/assets/github-6a4174aa7e25ce4268078491fdfa22273eef841d99e1ab07ccce9b89c747f55d.css" media="all" rel="stylesheet">
+		<link href="https://assets-cdn.github.com/assets/github2-5b5e999e041f2586f9dc06b940229076225e6ec5ab5406be292a87331325fdc0.css" media="all" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
@@ -17,7 +19,7 @@
 			<div class="container">
 				<h1><a href="index.html">PanList</a> ArchRepo <a href="https://github.com/Firef0x/vim/releases">gVimPortable</a></h1>
 				<h2>
-					Firef0x's Arch Linux Repository<br/>Firef0x 的 Arch Linux 安装包仓库
+					Firef0x's Arch Linux Repository<br/>Firef0x 的 Arch Linux 软件包仓库
 				</h2>
 
 				<section id="downloads">
@@ -37,12 +39,12 @@
 		<div class="container">
 			<section id="main_content">
 				<h3>
-					<a name="welcome-to-firef0x-repo" class="anchor" href="#welcome-to-firef0x-repo"><span class="octicon octicon-link"></span></a>
-					Welcome to Firef0x's Arch Linux Repository<br/>欢迎来到 Firef0x 的 Arch Linux 安装包仓库
+					<a name="welcome" class="anchor" href="#welcome"><span class="octicon octicon-link"></span></a>
+					Welcome to Firef0x's Arch Linux Repository<br/>&nbsp;&nbsp;&nbsp;欢迎来到 Firef0x 的 Arch Linux 软件包仓库
 				</h3>
 
 				<p>The project contains only Arch Linux packages for convenience.</p>
-				<p>这个项目只包含 Arch Linux 的安装包，以方便各位朋友使用。</p>
+				<p>这个项目只包含 Arch Linux 的软件包，以方便各位朋友使用。</p>
 
 				<p>Short URL of this page is <a href="http://git.io/-1">http://git.io/-1</a></p>
 				<p>本页面的短网址为 <a href="http://git.io/-1">http://git.io/-1</a></p>
@@ -51,13 +53,13 @@
 				<p>openSUSE 构建服务页面的短网址为 <a href="http://git.io/-0">http://git.io/-0</a></p>
 
 				<h3>
-					<a name="guide-for-adding" class="anchor" href="#guide-for-adding"><span class="octicon octicon-link"></span></a>
-					Guide for Adding This Repo<br/>添加本仓库指引
+					<a name="guide-to-add" class="anchor" href="#guide-to-add"><span class="octicon octicon-link"></span></a>
+					Guide to Add This Repo<br/>&nbsp;&nbsp;&nbsp;添加本仓库指引
 				</h3>
 
-				<p>Add the repo to /etc/pacman.conf under the current official Arch Linux repos:</p>
+				<p>Add the repo to <b><em>/etc/pacman.conf</em></b> under the current official Arch Linux repos:</p>
 
-				<p>在 /etc/pacman.conf 文件中现有的 Arch Linux 官方仓库下添加仓库信息：</p>
+				<p>在 <b><em>/etc/pacman.conf</em></b> 文件中现有的 Arch Linux 官方仓库下添加仓库信息：</p>
 
 <pre><code>[firef0x]
 Server = http://firef0x.github.io/archrepo/$arch
@@ -66,21 +68,61 @@ SigLevel = Never
 
 <pre><code>[home_firef0x_Arch_Extra]
 Server = http://download.opensuse.org/repositories/home:/firef0x/Arch_Extra/$arch
-# Mirror site for Chinese users 中文用户镜像源
+# Mirror sites for Chinese users 中文用户镜像仓库 中文用戶鏡像倉庫
 # Server = ftp://ftp.twaren.net/Linux/OpenSuSE/repositories/home:/firef0x/Arch_Extra/$arch
+# Or 或
+# Server = http://ftp.yzu.edu.tw/Linux/openSUSE/repositories/home:/firef0x/Arch_Extra/$arch
 SigLevel = Never
 </code></pre>
 
-				<p>Then, update your sync database and install the package:</p>
+				<p>Then, update your sync database and install the packages:</p>
 
 				<p>然后，更新您的远程同步数据库并安装包：</p>
 
-<pre><code>$ sudo pacman -Syu
-$ sudo pacman -S [packages ...]
+<pre><code>$ sudo pacman -Syu [packages ...]
 </code></pre>
+				<br/>
 
 				<h3>
-					<a name="other-resources" class="anchor" href="#other-resources"><span class="octicon octicon-link"></span></a>Other Resources<br/>其它资源
+					<a name="troubleshooting" class="anchor" href="#troubleshooting"><span class="octicon octicon-link"></span></a>
+					Troubleshooting<br/>&nbsp;&nbsp;&nbsp;疑难解答
+				</h3>
+
+				<h4>
+					Failed to install packages, report <b><em>"Maximum file size exceeded"</em></b> or <b><em>"Invalid or corrupted package (checksum)"</em></b><br/>
+					安装软件包失败，报错 <b><em>"Maximum file size exceeded"</em></b> 或 <b><em>"Invalid or corrupted package (checksum)"</em></b>
+				</h4>
+
+				<p>
+					Well, the repository site of openSUSE looks like not friendly to Arch Linux users. Please setup <b><em>wget</em></b> as default download tool by removing comment from the following line in <b><em>/etc/pacman.conf</em></b>:
+				</p>
+
+				<p>
+					好吧，openSUSE 的软件仓库似乎对 Arch Linux 用户不太友好。请通过取消 <b><em>/etc/pacman.conf</em></b> 中的这行注释以将 <b><em>wget</em></b> 设置为默认下载工具：
+				</p>
+
+<pre><code>XferCommand = /usr/bin/wget --passive-ftp -c -O%o %u
+</code></pre>
+
+				<p>
+					Then try again.
+				</p>
+
+				<p>
+					然后再试一次。
+				</p>
+
+				<p>
+					If not work, please try the mirror sites for Chinese users listed above.
+				</p>
+
+				<p>
+					如果仍不成功，请尝试使用上面列出的中文用户镜像仓库。
+				</p>
+
+				<h3>
+					<a name="other-resources" class="anchor" href="#other-resources"><span class="octicon octicon-link"></span></a>
+					Other Resources<br/>&nbsp;&nbsp;&nbsp;其它资源
 				</h3>
 
 				<p>
@@ -98,17 +140,18 @@ $ sudo pacman -S [packages ...]
 				<p>您可以从以下网址得到这些包： <a mcolored="true" href="http://pan.baidu.com/s/1jG1JYT4">http://pan.baidu.com/s/1jG1JYT4</a> ，提取密码是 <b><em>3rf8</em></b>. </p>
 
 				<p>
-					Notice: Due to <a href="http://tieba.baidu.com/p/3004903017">the policy of Baidu for the anti-vulgarity campaign</a>, the package <b><em>myeclipse-spring-11.0.2-1-x86_64.pkg.tar</em></b> has to be renamed to its BASE64-encoded form 
+					Notice: Due to <a href="http://tieba.baidu.com/p/3004903017">the policy of Baidu for the anti-vulgarity campaign</a>, the package <b><em>myeclipse-spring-11.0.2-1-x86_64.pkg.tar</em></b> has to be renamed to its BASE64-encoded form
 					<b><em>bXllY2xpcHNlLXNwcmluZy0xMS4wLjItMS14ODZfNjQucGtnLnRhcg</em></b> and should be renamed back to its original name after downloading.
 				</p>
 
 				<p>
-					注：由于<a href="http://tieba.baidu.com/p/3004903017">百度配合”扫黄打非·净网2014行动”的规定</a>，软件包 <b><em>myeclipse-spring-11.0.2-1-x86_64.pkg.tar</em></b> 只能重命名到其 BASE64 加密形式 
+					注：由于<a href="http://tieba.baidu.com/p/3004903017">百度配合“扫黄打非·净网2014行动”的规定</a>，软件包 <b><em>myeclipse-spring-11.0.2-1-x86_64.pkg.tar</em></b> 只能重命名到其 BASE64 加密形式
 					<b><em>bXllY2xpcHNlLXNwcmluZy0xMS4wLjItMS14ODZfNjQucGtnLnRhcg</em></b> ，应在下载后重命名回原来的名称。
 				</p>
 
 				<h3>
-					<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Author and License<br/>作者与协议
+					<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>
+					Author and License<br/>&nbsp;&nbsp;&nbsp;作者与协议
 				</h3>
 
 				<p>All packages are built by <a href="https://github.com/Firef0x" class="user-mention">@Firef0x</a>. </p>
@@ -117,6 +160,5 @@ $ sudo pacman -S [packages ...]
 
 			</section>
 		</div>
-
 	</body>
 </html>

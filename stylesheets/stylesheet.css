@@ -12,7 +12,7 @@ body {
 
 .container {
   width: 90%;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -58,7 +58,7 @@ header h1 {
 }
 
 h3:before {
-  content: "§ ";
+  content: " ";
   font-size: 16px;
 }
 
@@ -191,6 +191,8 @@ hr {
 .btn {
   display: inline-block;
   background: -webkit-linear-gradient(top, rgba(40, 40, 40, 0.3), rgba(35, 35, 35, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3));
+  background-color: transparent !important;
+  background-image: none !important;
   padding: 8px 18px;
   border-radius: 50px;
   border: 2px solid rgba(0, 0, 0, 0.7);
@@ -233,12 +235,12 @@ hr {
 
 a {
   color: #63c0f5;
-  text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+  text-shadow: 0 0 10px rgba(104, 182, 255, 0.5);
 }
 
 a.user-mention {
   color: #307afd;
-  text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+  text-shadow: 0 0 10px rgba(104, 182, 255, 0.5);
 }
 
 /* Clearfix */
